@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { useLocalStorage } from "../hooks/localStorageKullan";
 
 const Navbar = (props) => {
-  const toggleMode = e => {
+  const toggleMode = (e) => {
     e.preventDefault();
-    props.setGeceModu(!props.geceModu);
+    props.geceModuHandler();
   };
 
   return (
@@ -12,7 +13,7 @@ const Navbar = (props) => {
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}
-          className={props.geceModu ? 'toggle toggled' : 'toggle'}
+          className={props.geceModu ? "toggle toggled" : "toggle"}
         />
       </div>
     </nav>
